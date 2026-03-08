@@ -1,0 +1,76 @@
+schema: '2.0'
+stages:
+  preprocess:
+    cmd: python preprocess.py
+    deps:
+    - path: data/loan_approval.csv
+      hash: md5
+      md5: c87e9a255ab406d5c0c6276297397dfa
+      size: 115793
+    - path: preprocess.py
+      hash: md5
+      md5: 12fd1b3644c2ba398a012d3267e74131
+      size: 788
+    outs:
+    - path: data/X_test.csv
+      hash: md5
+      md5: 07f17a8d34199ac8b472b7beab458ef7
+      size: 9393525
+    - path: data/X_train.csv
+      hash: md5
+      md5: a8ed7bf2467ece8ccaa0076cfe5aefe3
+      size: 37356663
+    - path: data/y_test.csv
+      hash: md5
+      md5: fd714b97c23b5040d1ae8df7dc754428
+      size: 2818
+    - path: data/y_train.csv
+      hash: md5
+      md5: 9c96cc910533d38f70e92954da9795be
+      size: 11217
+  train:
+    cmd: python train.py
+    deps:
+    - path: data/X_test.csv
+      hash: md5
+      md5: 07f17a8d34199ac8b472b7beab458ef7
+      size: 9393525
+    - path: data/X_train.csv
+      hash: md5
+      md5: a8ed7bf2467ece8ccaa0076cfe5aefe3
+      size: 37356663
+    - path: data/y_test.csv
+      hash: md5
+      md5: fd714b97c23b5040d1ae8df7dc754428
+      size: 2818
+    - path: data/y_train.csv
+      hash: md5
+      md5: 9c96cc910533d38f70e92954da9795be
+      size: 11217
+    - path: train.py
+      hash: md5
+      md5: c45e19433a6fa615fd0c28b96ac04696
+      size: 871
+  tune:
+    cmd: python tune.py
+    deps:
+    - path: data/X_test.csv
+      hash: md5
+      md5: 07f17a8d34199ac8b472b7beab458ef7
+      size: 9393525
+    - path: data/X_train.csv
+      hash: md5
+      md5: a8ed7bf2467ece8ccaa0076cfe5aefe3
+      size: 37356663
+    - path: data/y_test.csv
+      hash: md5
+      md5: fd714b97c23b5040d1ae8df7dc754428
+      size: 2818
+    - path: data/y_train.csv
+      hash: md5
+      md5: 9c96cc910533d38f70e92954da9795be
+      size: 11217
+    - path: tune.py
+      hash: md5
+      md5: dfd766f22081ecc5fc5e5672670f84d2
+      size: 1137
