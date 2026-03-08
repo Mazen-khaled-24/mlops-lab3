@@ -28,3 +28,21 @@ stages:
       - data/X_test.csv
       - data/y_train.csv
       - data/y_test.csv
+
+  train_xgb:
+    cmd: python train_autolog_xgb.py
+    deps:
+      - train_autolog_xgb.py
+      - data/X_train.csv
+      - data/X_test.csv
+      - data/y_train.csv
+      - data/y_test.csv
+
+  train_lgbm:
+    cmd: python train_autolog_lgbm.py
+    deps:
+      - train_autolog_lgbm.py
+      - data/X_train.csv
+      - data/X_test.csv
+      - data/y_train.csv
+      - data/y_test.csv

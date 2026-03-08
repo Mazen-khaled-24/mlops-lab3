@@ -74,3 +74,49 @@ stages:
       hash: md5
       md5: dfd766f22081ecc5fc5e5672670f84d2
       size: 1137
+  train_xgb:
+    cmd: python train_autolog_xgb.py
+    deps:
+    - path: data/X_test.csv
+      hash: md5
+      md5: 07f17a8d34199ac8b472b7beab458ef7
+      size: 9393525
+    - path: data/X_train.csv
+      hash: md5
+      md5: a8ed7bf2467ece8ccaa0076cfe5aefe3
+      size: 37356663
+    - path: data/y_test.csv
+      hash: md5
+      md5: fd714b97c23b5040d1ae8df7dc754428
+      size: 2818
+    - path: data/y_train.csv
+      hash: md5
+      md5: 9c96cc910533d38f70e92954da9795be
+      size: 11217
+    - path: train_autolog_xgb.py
+      hash: md5
+      md5: 6eddaaa781c88e4fd30e8de4989ca091
+      size: 875
+  train_lgbm:
+    cmd: python train_autolog_lgbm.py
+    deps:
+    - path: data/X_test.csv
+      hash: md5
+      md5: 07f17a8d34199ac8b472b7beab458ef7
+      size: 9393525
+    - path: data/X_train.csv
+      hash: md5
+      md5: a8ed7bf2467ece8ccaa0076cfe5aefe3
+      size: 37356663
+    - path: data/y_test.csv
+      hash: md5
+      md5: fd714b97c23b5040d1ae8df7dc754428
+      size: 2818
+    - path: data/y_train.csv
+      hash: md5
+      md5: 9c96cc910533d38f70e92954da9795be
+      size: 11217
+    - path: train_autolog_lgbm.py
+      hash: md5
+      md5: 71122c9475d9e8adb26a60f2d2e222b9
+      size: 777
